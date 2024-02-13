@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        .calculadora {
+            height: 400px;
+            width: 300px;
+            background-color:#2e2e2ee7;
+            border-radius: 15px;
+            margin: auto;
+            box-shadow: 2px 2px 2px #0000007e;
+            border: 1px solid black;
+        }
+
+        .visor {
+            width: 250px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: white;
+            position: absolute;
+            margin-left: 25px;
+            margin-top: 25px;
+            text-align: right;
+        }
+
+        .botoes_pequenosf1 {
+            margin-top: 100px;
+            width: 45px;
+            height: 40px;
+            margin-left: 10px;
+            background-color:#23272B;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .botoes_pequenosf2 {
+            width: 45px;
+            height: 40px;
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 8.5px;
+            background-color:#23272B;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .botoes_pequenosf3 {
+            width: 45px;
+            height: 40px;
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 8.5px;
+            background-color:#23272B;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .botoes_pequenosf4 {
+            width: 45px;
+            height: 40px;
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 8.5px;
+            background-color:#23272B;;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .botoes_pequenosf5 {
+            width: 45px;
+            height: 40px;
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 8.5px;
+            background-color:#23272B;
+            color: white;
+            border-radius: 5px;
+
+        }
+
+        .botoes_grandes{
+            width: 100px;
+            height: 40px;
+            margin-left: 40px;
+            background-color:#23272B;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .igual{
+            width: 45px;
+            height: 90px;
+            position: absolute;
+            margin-left: 13px;
+            margin-top: 10px;
+            background-color:#23272B;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="calculadora">
+        <div>
+            <input id="resultado" type="text" class="visor" placeholder="0">
+        </div>
+
+        <div>
+            <button onclick="calcular('açao','c')" class="botoes_grandes">C</button>
+            <button onclick="calcular('açao','/')" class="botoes_pequenosf1">/</button>
+            <button onclick="calcular('açao','*')" class="botoes_pequenosf1">x</button>
+        </div>
+        <div>
+            <button onclick="calcular('valor',7)"  class="botoes_pequenosf2" style="margin-left: 40px;">7</button>
+            <button onclick="calcular('valor',8)"  class="botoes_pequenosf2">8</button>
+            <button onclick="calcular('valor',9)"  class="botoes_pequenosf2">9</button>
+            <button onclick="calcular('açao','-')"  class="botoes_pequenosf2">-</button>
+
+        </div>
+        <div>
+            <button onclick="calcular('valor',4)"  class="botoes_pequenosf3" style="margin-left: 40px;">4</button>
+            <button onclick="calcular('valor',5)" class="botoes_pequenosf3">5</button>
+            <button onclick="calcular('valor',6)" class="botoes_pequenosf3">6</button>
+            <button onclick="calcular('açao','+')" class="botoes_pequenosf3">+</button>
+        </div>
+        <div>
+            <button onclick="calcular('valor',1)"  class="botoes_pequenosf4" style="margin-left: 40px;">1</button>
+            <button onclick="calcular('valor',2)" class="botoes_pequenosf4">2</button>
+            <button onclick="calcular('valor',3)" class="botoes_pequenosf4">3</button>
+            <button onclick="calcular('açao','=')" class="igual">=</button>
+            
+            
+        </div>
+        <div>
+            <button onclick="calcular('valor', 0)"  class="botoes_grandes">0</button>
+            <button onclick="calcular('açao','.')"  class="botoes_pequenosf5">.</button>
+            
+        </div>
+
+    </div>
+    <script>
+        function calcular(tipo, valor){
+            if(tipo === 'açao'){
+                if(valor === 'c'){
+                    document.getElementById('resultado').value = ''
+                }
+                if(valor === '+' || valor=== '-' || valor=== '*' || valor=== '/' || valor=== '.'){
+                    document.getElementById('resultado').value += valor
+                }
+                else if(valor === '='){
+                    var valor_campo = eval(document.getElementById('resultado').value)
+                    document.getElementById('resultado').value = valor_campo
+                }
+
+
+            }else if(tipo === 'valor') {
+                document.getElementById('resultado').value += valor
+            
+            }
+
+        }
+    </script>
+</body>
+
+</html>
