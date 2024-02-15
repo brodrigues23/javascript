@@ -5,110 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <style>
-        .calculadora {
-            height: 400px;
-            width: 300px;
-            background-color:#2e2e2ee7;
-            border-radius: 15px;
-            margin: auto;
-            box-shadow: 2px 2px 2px #0000007e;
-            border: 1px solid black;
-        }
-
-        .visor {
-            width: 250px;
-            height: 40px;
-            border-radius: 10px;
-            background-color: white;
-            position: absolute;
-            margin-left: 25px;
-            margin-top: 25px;
-            text-align: right;
-        }
-
-        .botoes_pequenosf1 {
-            margin-top: 100px;
-            width: 45px;
-            height: 40px;
-            margin-left: 10px;
-            background-color:#23272B;
-            color: white;
-            border-radius: 5px;
-        }
-
-        .botoes_pequenosf2 {
-            width: 45px;
-            height: 40px;
-            display: inline-block;
-            margin-top: 10px;
-            margin-left: 8.5px;
-            background-color:#23272B;
-            color: white;
-            border-radius: 5px;
-        }
-
-        .botoes_pequenosf3 {
-            width: 45px;
-            height: 40px;
-            display: inline-block;
-            margin-top: 10px;
-            margin-left: 8.5px;
-            background-color:#23272B;
-            color: white;
-            border-radius: 5px;
-        }
-
-        .botoes_pequenosf4 {
-            width: 45px;
-            height: 40px;
-            display: inline-block;
-            margin-top: 10px;
-            margin-left: 8.5px;
-            background-color:#23272B;;
-            color: white;
-            border-radius: 5px;
-        }
-
-        .botoes_pequenosf5 {
-            width: 45px;
-            height: 40px;
-            display: inline-block;
-            margin-top: 10px;
-            margin-left: 8.5px;
-            background-color:#23272B;
-            color: white;
-            border-radius: 5px;
-
-        }
-
-        .botoes_grandes{
-            width: 100px;
-            height: 40px;
-            margin-left: 40px;
-            background-color:#23272B;
-            color: white;
-            border-radius: 5px;
-        }
-
-        .igual{
-            width: 45px;
-            height: 90px;
-            position: absolute;
-            margin-left: 13px;
-            margin-top: 10px;
-            background-color:#23272B;
-            color: white;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
     <div class="calculadora">
         <div>
-            <input id="resultado" type="text" class="visor" placeholder="0">
+            <input id="resultado" type="text" class="visor" placeholder="0" disabled>
         </div>
 
         <div>
@@ -144,28 +48,8 @@
         </div>
 
     </div>
-    <script>
-        function calcular(tipo, valor){
-            if(tipo === 'açao'){
-                if(valor === 'c'){
-                    document.getElementById('resultado').value = ''
-                }
-                if(valor === '+' || valor=== '-' || valor=== '*' || valor=== '/' || valor=== '.'){
-                    document.getElementById('resultado').value += valor
-                }
-                else if(valor === '='){
-                    var valor_campo = eval(document.getElementById('resultado').value)
-                    document.getElementById('resultado').value = valor_campo
-                }
 
-
-            }else if(tipo === 'valor') {
-                document.getElementById('resultado').value += valor
-            
-            }
-
-        }
-    </script>
+    <script src="calc.js"></script>
 </body>
 
 </html>
